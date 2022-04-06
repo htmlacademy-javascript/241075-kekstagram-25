@@ -2,13 +2,13 @@ import { removeAllChildren } from '../js/utils.js';
 import { pictures } from '../js/data-server.js';
 
 const BODY = document.querySelector('body');
+const COMMENTS_LOAD_LIMIT = 5;
 
 const bigPicture = document.querySelector('.big-picture');
 const commentsList = document.querySelector('.social__comments');
 const templateComment = document.querySelector('#comment').content.querySelector('.social__comment');
 const counterComments = bigPicture.querySelector('.social__comment-count');
 const loaderComments = bigPicture.querySelector('.comments-loader');
-const COMMENTS_LOAD_LIMIT = 5;
 let commentsCounter = 0;
 
 const fillComments = (insertPointComments, comments) => {

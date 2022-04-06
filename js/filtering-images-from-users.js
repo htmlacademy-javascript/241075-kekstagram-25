@@ -2,26 +2,27 @@ import { getRandomArrayElement } from '../js/utils.js';
 import { createPictures } from '../js/create-thumbnails.js';
 import { debounce } from '../js/utils.js';
 
-const picturesFiltres = document.querySelector('.img-filters');
-const defaultFilter = picturesFiltres.querySelector('#filter-default');
-const randomFilter = picturesFiltres.querySelector('#filter-random');
-const popularFilter = picturesFiltres.querySelector('#filter-discussed');
 const QUANTITY_RANDOM_PICTURES = 10;
 const TIMEOUT = 500;
 
+const picturesFilters = document.querySelector('.img-filters');
+const defaultFilter = picturesFilters.querySelector('#filter-default');
+const randomFilter = picturesFilters.querySelector('#filter-random');
+const popularFilter = picturesFilters.querySelector('#filter-discussed');
+
 const filteringImagesFromUsers = (data) => {
-  const filterPictires = data.slice();
+  const filterPictures = data.slice();
 
   const filterRandom = (quantity) => {
     const arrayRandomPictures = [];
     for (let i = 0; i < quantity; i++) {
-      arrayRandomPictures.push(getRandomArrayElement(filterPictires));
+      arrayRandomPictures.push(getRandomArrayElement(filterPictures));
     }
     return arrayRandomPictures;
   };
 
   const filterPopular = () => {
-    const arrayPopularPictures = filterPictires.slice();
+    const arrayPopularPictures = filterPictures.slice();
     const comparePost = (postA, postB) => {
       const rankA = postA.likes;
       const rankB = postB.likes;
@@ -51,8 +52,8 @@ const filteringImagesFromUsers = (data) => {
     }
   };
 
-  picturesFiltres.addEventListener('click', (evt) => {
-    if (evt.target !== picturesFiltres) {
+  picturesFilters.addEventListener('click', (evt) => {
+    if (evt.target !== picturesFilters) {
       debounce(() => createPictures(onChangeFilter(evt.target)), TIMEOUT);
     }
   });

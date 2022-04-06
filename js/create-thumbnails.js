@@ -1,4 +1,5 @@
 import { removeAllPictures } from '../js/utils.js';
+
 const pictures = document.querySelector('.pictures');
 const picturesTemplate = document.querySelector('#picture').content;
 const picturesFragment = document.createDocumentFragment();

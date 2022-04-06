@@ -1,8 +1,9 @@
 import { closePopup } from '../js/utils.js';
 import { onUploadFormSubmit, pristine} from '../js/form-validation.js';
-import { donwloadPhoto } from '../js/photo-preview.js';
+import { downloadPhoto } from '../js/photo-preview.js';
 
 const BODY = document.querySelector('body');
+
 const uploadButton = document.querySelector('#upload-file');
 const editForm = document.querySelector('.img-upload__overlay');
 const uploadForm = document.querySelector('.img-upload__form');
@@ -26,7 +27,7 @@ const openEditor = () => {
   uploadButton.addEventListener('change', () => {
     BODY.classList.add('modal-open');
     editForm.classList.remove('hidden');
-    donwloadPhoto();
+    downloadPhoto();
     onUploadFormSubmit(closeEditForm);
     closeEditForm();
   });

@@ -1,8 +1,9 @@
-const photoPreview = document.querySelector('.img-upload__preview');
-const uploadButton = document.querySelector('#upload-file[type=file]');
 const FILE_TYPES = ['jpg', 'jpeg', 'png', 'gif'];
 
-const donwloadPhoto = () => {
+const photoPreview = document.querySelector('.img-upload__preview');
+const uploadButton = document.querySelector('#upload-file[type=file]');
+
+const downloadPhoto = () => {
   const file = uploadButton.files[0];
   const fileName = file.name.toLowerCase();
 
@@ -12,4 +13,4 @@ const donwloadPhoto = () => {
   }
 };
 
-export { donwloadPhoto };
+export { downloadPhoto };

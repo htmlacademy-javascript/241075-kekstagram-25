@@ -1,8 +1,9 @@
 import { onError } from '../js/utils.js';
 import { showDownloadMessage } from '../js/utils.js';
 
-let pictures = [];
 const BODY = document.querySelector('body');
+
+let pictures = [];
 
 const getData = (onSuccess) => {
   fetch('https://25.javascript.pages.academy/kekstagram/data')

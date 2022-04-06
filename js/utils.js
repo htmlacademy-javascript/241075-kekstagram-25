@@ -7,10 +7,7 @@ const getRandomNumber = (min, max) => {
   return Math.floor(Math.random() * (upper - lower + 1)) + lower;
 };
 
-const checkMaxLength = (string, maxLength) => string.length <= maxLength;
-
-const getRandomArrayElement = (array) =>
-  array[getRandomNumber(0, array.length - 1)];
+const getRandomArrayElement = (array) => array[getRandomNumber(0, array.length - 1)];
 
 const makeCounter = (start) => {
   let currentCount = start;
@@ -45,6 +42,7 @@ const closePopup = (element, closeButton) => {
     // eslint-disable-next-line no-use-before-define
     element.removeEventListener('click', onElementClickOutside);
   };
+
   const onElementKeydownEsc = (evt) => {
     if (isEscapeKey(evt) && evt.target !== document.querySelector('.text__hashtags') && evt.target !== document.querySelector('.text__description')) {
       evt.preventDefault();
@@ -71,9 +69,7 @@ const onError = (element, error, className) => {
   errorOverlay.innerHTML = `<p>${error.message}</p>`;
   element.appendChild(errorOverlay);
 
-  setTimeout(() => {
-    errorOverlay.remove();
-  }, ALERT_SHOW_TIME);
+  setTimeout(() => errorOverlay.remove(), ALERT_SHOW_TIME);
 };
 
 const showDownloadMessage = (status) => {
@@ -95,14 +91,14 @@ const unblockSubmitButton = (submitButton) => {
   submitButton.textContent = 'Опубликовать';
 };
 
-function debounce (callback, timeoutDelay) {
+const debounce = (callback, timeoutDelay) => {
   // eslint-disable-next-line prefer-const
   let timeoutId;
   clearTimeout(timeoutId);
   timeoutId = setTimeout(() => callback.apply(), timeoutDelay);
-}
+};
 
 
-export { getRandomNumber, checkMaxLength, getRandomArrayElement, counter, removeAllChildren,
+export { getRandomNumber, getRandomArrayElement, counter, removeAllChildren,
   removeAllPictures, closePopup, onError, blockSubmitButton, unblockSubmitButton,
   debounce, showDownloadMessage };

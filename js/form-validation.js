@@ -1,14 +1,14 @@
 import { blockSubmitButton, unblockSubmitButton} from '../js/utils.js';
 import { postData } from '../js/data-server.js';
 
+const MAX_HASH_TAGS_AMOUNT = 5;
+const MAX_DESCRIPTION_LENGTH = 140;
+const MAX_HASH_TAGS_LENGTH = 20;
+
 const uploadForm = document.querySelector('.img-upload__form');
 const submitButton = document.querySelector('.img-upload__submit');
 const descriptionTextarea = uploadForm.querySelector('.text__description');
 const hashTagsInput = uploadForm.querySelector('.text__hashtags');
-
-const MAX_HASH_TAGS_AMOUNT = 5;
-const MAX_DESCRIPTION_LENGTH = 140;
-const MAX_HASH_TAGS_LENGTH = 20;
 
 //Шаблон регулярного выражения для проверки хэш-тегов
 // eslint-disable-next-line no-misleading-character-class

@@ -2,7 +2,7 @@ const intensivityEffectSlider = document.querySelector('.effect-level__slider');
 const intensivityEffectValue = document.querySelector('.effect-level__value');
 const intensivityEffectForm = document.querySelector('.img-upload__effect-level');
 const photoPreview = document.querySelector('.img-upload__preview');
-const filtresList = document.querySelector('.img-upload__effects');
+const filtersList = document.querySelector('.img-upload__effects');
 
 const filters = {
   'effect-none': {
@@ -118,7 +118,7 @@ const settingsSlider = () => {
       });
     }
   };
-  filtresList.addEventListener('change', onChangeFiltersList);
+  filtersList.addEventListener('change', onChangeFiltersList);
 };
 
 export { settingsSlider };
